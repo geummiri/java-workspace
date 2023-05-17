@@ -7,8 +7,8 @@ public class OperatorPractice {
 	public static void main(String[] args) {
 		
 		OperatorPractice op = new OperatorPractice();
-		op.method1();
-//		op.method2();
+//		op.method1();
+		op.method2();
 //		op.method3();
 //		op.method4();
 //		op.method5();
@@ -38,12 +38,14 @@ public class OperatorPractice {
 		System.out.print("양수를 입력해주세요 > ");
 		int num = sc.nextInt();
 		
-		System.out.println(num / 100 * 100);
+		System.out.println((num > 0) ? num / 100 * 100 : "양수를 입력해주세요.");
 	}
 	
 	public void method3() {
 
 		Scanner sc = new Scanner(System.in);
+		
+		boolean result = true;
 		
 		System.out.print("입력1 : ");
 		int num1 = sc.nextInt();
@@ -54,7 +56,12 @@ public class OperatorPractice {
 		System.out.print("입력3 : ");
 		int num3 = sc.nextInt();
 		
-		System.out.println((num1 == num2) ? true : (num2 == num3) ? true :false);
+		result = (num1 == num2) && (num2 == num3);
+		
+		System.out.println(result);
+		
+//		System.out.println((num1 == num2) ? true : (num2 == num3) ? true :false);
+		
 		
 	}
 	
@@ -84,14 +91,20 @@ public class OperatorPractice {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		int result = 0;
+		
 		System.out.print("사과의 개수 : ");
 		int num1 = sc.nextInt();
 		
 		System.out.print("바구니의 크기 : ");
 		int num2 = sc.nextInt();
 		
-		System.out.println("필요한 바구니의 수 : " + (num1 / num2 + 1));
-
+//		System.out.println("필요한 바구니의 수 : " + (num1 / num2 + 1));
+		
+		result = (num1 % num2 == 0) ? (num1 / num2) : (num1 / num2 + 1);
+		 
+		System.out.println(result);
+		
 	}
 }
 
