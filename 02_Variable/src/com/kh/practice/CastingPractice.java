@@ -8,9 +8,8 @@ public class CastingPractice {
 		
 		CastingPractice v = new CastingPractice();
 		
-		v.method1();
-	//	System.out.println(int(1 + a));
-//		v.method2();
+//		v.method1();
+		v.method2();
 		
 	}
 	
@@ -19,15 +18,11 @@ public class CastingPractice {
 		Scanner sc = new Scanner(System.in);
 	
 		System.out.print("문자 : ");
-		int str = sc.nextInt();
+		char str =sc.next().charAt(0);
 		sc.nextLine();
 		
-		
-		
-		
-		System.out.println(str +" unicode : " + (str));
-		
-		System.out.println(str+1 + " unicode : " + str+1);
+		System.out.println(str +" unicode : " + (int)str);
+		System.out.println((char)(str+1) + " unicode : " + (int)(str+1));
 		
 	}
 	
@@ -36,18 +31,20 @@ public class CastingPractice {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("국어 : ");
-		int korean = sc.nextInt();
+		float korean = sc.nextInt();
+		//초기값을 int로 적고 싶은데 평균낼때 38.00 으로 나와서 어떤게 베스트 답인지 모르겠습니다 ㅠㅠ
 		
 		System.out.print("영어 : ");
-		int eng = sc.nextInt();
+		float eng = sc.nextInt();
 		
 		System.out.print("수학 : ");
-		int math = sc.nextInt();
+		float math = sc.nextInt();
 		
-		System.out.println("총점 : " + (korean + eng + math));
+		float sum = (int)(korean + eng + math);
+		float avg = (sum/3);
 		
-		System.out.println("평균 : " + (double)((korean + eng + math)/3)); 소수점 0으로 나옴
-//		System.out.printf("평균 : %d ", (korean+eng+math)/3);
+		System.out.println("총점 : " + sum);
+		System.out.printf("평균 : %.2f" ,avg); 
 		
 	}
 }
