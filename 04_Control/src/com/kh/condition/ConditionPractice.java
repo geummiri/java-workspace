@@ -12,9 +12,14 @@ public class ConditionPractice {
 //		co.practice1();
 //		co.practice2();
 //		co.practice3();
-		co.practice4();
+//		co.practice4();
 //		co.practice5();
 //		co.practice6();
+//		co.practice7();
+		co.practice8();
+//		co.practice9();
+//		co.practice10();
+//		co.practice11();
 	}
 
 	/*
@@ -103,9 +108,21 @@ public class ConditionPractice {
 	 * 구현하세요. (합격 조건 : 세 과목의 점수가 각각 40점 이상이면서 평균이 60점 이상일 경우) 합격 했을 경우 과목 별 점수와 합계,
 	 * 평균, “축하합니다, 합격입니다!”를 출력하고 불합격인 경우에는 “불합격입니다.”를 출력하세요.
 	 * 
-	 * 국어점수 : 88 수학점수 : 50 영어점수 : 40 불합격입니다.
+	 * 국어점수 : 88
+	 * 수학점수 : 50 
+	 * 영어점수 : 40 
+	 * 불합격입니다.
 	 * 
-	 * 국어점수 : 88 수학점수 : 50 영어점수 : 45 국어 : 88 수학 : 50 영어 : 45 합계 : 183 평균 : 61.0
+	 * 국어점수 : 88 
+	 * 수학점수 : 50 
+	 * 영어점수 : 45 
+	 * 
+	 * 국어 : 88 
+	 * 수학 : 50 
+	 * 영어 : 45 
+	 * 합계 : 183 
+	 * 평균 : 61.0
+	 * 
 	 * 축하합니다, 합격입니다!
 	 */
 	public void practice4() {
@@ -122,38 +139,107 @@ public class ConditionPractice {
 		
 		System.out.print("수학 : ");
 		math = sc.nextInt();
+		
+		int sum = (korean + eng + math);
+		float avg = sum/3;
+		
+		if(korean>=40 && eng >=40 && math>=40 && avg >=60) {
+			System.out.println("합계 : " + sum);
+			System.out.println("평균 : " + avg);
+			System.out.println();
+			System.out.println("축하합니다, 합격입니다!");
+		} else {
+			System.out.println("불합격입니다.");
+		}
 	}
 
 	/*
 	 * B 옷가게는 10만 원 이상 사면 5%, 30만 원 이상 사면 10%, 50만원 이상 사면 20%를 할인해준다. 구매한 옷의 가격을
 	 * 입력했을 때, 지불해야 할 금액을 출력하세요.
 	 * 
-	 * 구매한 옷 가격 : 580,000 464,000
+	 * 구매한 옷 가격 : 580,000
+	 * 464,000
 	 */
 	public void practice5() {
+		
+		int cost = 0;
+		
+		System.out.print("구매한 옷 가격 : ");
+		cost = sc.nextInt();
+		
+		if(cost>=500000) {
+			System.out.println(cost-(cost *0.2));
+		} else if(cost>=300000) {
+			System.out.println(cost-(cost *0.1));
+		} else if(cost>=100000) {
+			System.out.println(cost-(cost *0.05));
+		}
+		 //숫자 콤마 찍는법이 뭔지 뒤에 소수점 안나오게 하는법
 
 	}
 
 	/*
 	 * 각에서 0도 초과 90도 미만은 예각, 90도는 직각, 90도 초과 180도 미만은 둔각 180도는 평각으로 분류한다. 입력받은 각에 따라
-	 * 예각일 때 1, 직각일 때 2, 둔각일 때 3, 평각일 때 4를 출력하세요.
+	 * 예각일 때 1, 
+	 * 직각일 때 2, 
+	 * 둔각일 때 3, 
+	 * 평각일 때 4를 출력하세요.
 	 */
 	public void practice6() {
-
+		
+		int num = 0;
+		
+		System.out.print("각도를 입력하시오 > ");
+		num = sc.nextInt();
+		
+		if(num < 90) {
+			System.out.println("예각일 때 1");
+		} else if (num == 90) {
+			System.out.println("직각일 때 2");
+		} else if ( 90<num && num<180) {
+			System.out.println("둔각일 때 3");
+		} else if (num == 180) {
+			System.out.println("평각일 때 4");
+		}
 	}
 
 	/*
 	 * 아이디, 비밀번호를 정해두고 로그인 기능을 작성하세요. 로그인 성공 시 “로그인 성공”, 아이디가 틀렸을 시 “아이디가 틀렸습니다.“,
 	 * 비밀번호가 틀렸을 시 “비밀번호가 틀렸습니다.”를 출력하세요.
 	 * 
-	 * 아이디 : happy 비밀번호 : 1234 로그인 성공!
+	 * 아이디 : happy 
+	 * 비밀번호 : 1234
+	 * 로그인 성공!
 	 * 
-	 * 아이디 : happy 비밀번호 : 23467 비밀번호가 틀렸습니다.
+	 * 아이디 : happy
+	 * 비밀번호 : 23467 
+	 * 비밀번호가 틀렸습니다.
 	 * 
-	 * 아이디 : happy222 비밀번호 : 1234 아이디가 틀렸습니다.
+	 * 아이디 : happy222
+	 * 비밀번호 : 1234 
+	 * 아이디가 틀렸습니다.
 	 */
 	public void practice7() {
-
+		
+		String id = "";
+		int pw = 0;
+		
+		System.out.print("아이디 : ");
+		id = sc.nextLine();
+		
+		System.out.print("비밀번호 : ");
+		pw = sc.nextInt();
+		
+		if("happy".equals(id) && 1234 == pw) {
+			System.out.println("로그인 성공!");
+			
+		} else if ("happy".equals(id) && 1234 != pw) {
+			System.out.println("비밀번호가 틀렸습니다.");
+			
+		} else if ("happy".equalsIgnoreCase(id) && 1234 == pw) {
+			System.out.println("아이디가 틀렸습니다.");
+			}
+		//아이디 일치하지 않을때 모르겠음
 	}
 
 	/*
@@ -161,14 +247,41 @@ public class ConditionPractice {
 	 * = 몸무게 / (키(m) * 키(m)) BMI가 18.5미만일 경우 저체중 / 18.5이상 23미만일 경우 정상체중 BMI가 23이상
 	 * 25미만일 경우 과체중 / 25이상 30미만일 경우 비만 BMI가 30이상일 경우 고도 비만
 	 * 
-	 * 키(m)를 입력해 주세요 : 1.62 몸무게(kg)를 입력해 주세요 : 46 BMI 지수 : 17.527815881725342 저체중
+	 * 키(m)를 입력해 주세요 : 1.62
+	 *  몸무게(kg)를 입력해 주세요 : 46 
+	 *  BMI 지수 : 17.527815881725342 
+	 *  저체중
 	 * 
 	 */
 	public void practice8() {
-
+		
+		double height = 0;
+		double weight = 0;
+		
+		System.out.print("키(m)를 입력해 주세요 : ");
+		height = sc.nextDouble();
+		
+		System.out.print("몸무게(kg)를 입력해 주세요 : ");
+		weight = sc.nextDouble();
+		
+		
+		double bmi = (weight) / (height * height);
+		System.out.println(bmi);
+		
+		if(bmi < 18.5) {
+			System.out.println("저체중");
+		} else if(18.5 <= bmi && bmi <23) {
+			System.out.println("정상체중");
+		} else if(23 <= bmi && bmi <25) {
+			System.out.println("과체중");
+		} else if(25 <= bmi && bmi <30) {
+			System.out.println("비만");
+		} else { 
+			System.out.println("고도비만");
+		}
 	}
 
-	/*
+	/*ㄴ
 	 * 키보드로 두 개의 양수와 연산 기호를 입력 받아 연산 기호에 맞춰 연산 결과를 출력하세요. (단, 양수가 아닌 값을 입력하거나 제시되어
 	 * 있지 않은 연산 기호를 입력 했을 시 “잘못 입력하셨습니다. 프로그램을 종료합니다.” 출력)
 	 * 
@@ -176,7 +289,7 @@ public class ConditionPractice {
 	 * 
 	 */
 	public void practice9() {
-
+		
 	}
 
 	/*
