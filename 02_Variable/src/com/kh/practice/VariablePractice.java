@@ -76,14 +76,20 @@ public class VariablePractice {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		
 		System.out.print("문자열을 입력하세요 : ");
 		
 		String num1 = sc.next();
 		sc.nextLine();
 		
 		System.out.println("첫번째 문자 : " + num1.charAt(0));
-		System.out.println("마지막 문자 : " + num1.charAt(7));
+		System.out.printf("마지막 문자 : " + num1.charAt(7));
 		
+		
+		// 요렇게 되면 computer보다 작은 단어를 입력하면 에러가 날거에요!
+		// 이제 조건문 들어가고 반복문 들어가는데요! 반복문에서 배우게 되는 것 중 이 문제를 해결할 수 있는 힌트를 얻으 실 수 있는데요!
+		// 그때 풀어보셔도 되구~ 만약 지금 생각해보고 싶다면 좀 더 고민해보셔도 됩니다!
+				
 		
 	}
 }

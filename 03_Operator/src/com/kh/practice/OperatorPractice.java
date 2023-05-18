@@ -60,8 +60,8 @@ public class OperatorPractice {
 		
 		System.out.println(result);
 		
-//		System.out.println((num1 == num2) ? true : (num2 == num3) ? true :false);
-		
+		// 요런 식으로 해도 결과가 나오니 괜찮지만!
+		// 사실 삼항연산자에서 true, false를 직접 넣는 경우는 드물거든요! 논리 연산자로도 해볼 수 있는데 논리 연산자 활용해보실래요?
 		
 	}
 	
@@ -98,8 +98,6 @@ public class OperatorPractice {
 		
 		System.out.print("바구니의 크기 : ");
 		int num2 = sc.nextInt();
-		
-//		System.out.println("필요한 바구니의 수 : " + (num1 / num2 + 1));
 		
 		result = (num1 % num2 == 0) ? (num1 / num2) : (num1 / num2 + 1);
 		 

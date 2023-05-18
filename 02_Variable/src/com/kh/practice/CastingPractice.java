@@ -31,20 +31,20 @@ public class CastingPractice {
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("국어 : ");
-		float korean = sc.nextInt();
-		//초기값을 int로 적고 싶은데 평균낼때 38.00 으로 나와서 어떤게 베스트 답인지 모르겠습니다 ㅠㅠ
+		int korean = sc.nextInt();
 		
 		System.out.print("영어 : ");
-		float eng = sc.nextInt();
+		int eng = sc.nextInt();
 		
 		System.out.print("수학 : ");
-		float math = sc.nextInt();
+		int math = sc.nextInt();
 		
-		float sum = (int)(korean + eng + math);
-		float avg = (sum/3);
+		int sum = (korean + eng + math);
+		float avg = (float)(korean + eng + math)/3;
 		
 		System.out.println("총점 : " + sum);
-		System.out.printf("평균 : %.2f" ,avg); 
+		System.out.printf("평균 : %.2f" , avg); 
 		
+		//소수점 두째자리까지 나타내기
 	}
 }
