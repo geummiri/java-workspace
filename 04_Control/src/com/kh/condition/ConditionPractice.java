@@ -15,8 +15,8 @@ public class ConditionPractice {
 //		co.practice4();
 //		co.practice5();
 //		co.practice6();
-//		co.practice7();
-		co.practice8();
+		co.practice7();
+//		co.practice8();
 //		co.practice9();
 //		co.practice10();
 //		co.practice11();
@@ -219,6 +219,7 @@ public class ConditionPractice {
 	 * 비밀번호 : 1234 
 	 * 아이디가 틀렸습니다.
 	 */
+	
 	public void practice7() {
 		
 		String id = "";
@@ -236,11 +237,12 @@ public class ConditionPractice {
 		} else if ("happy".equals(id) && 1234 != pw) {
 			System.out.println("비밀번호가 틀렸습니다.");
 			
-		} else if ("happy".equalsIgnoreCase(id) && 1234 == pw) {
+		} else if (!("happy".equals(id)) && 1234 == pw) {
 			System.out.println("아이디가 틀렸습니다.");
-			}
-		//아이디 일치하지 않을때 모르겠음
+		}
 	}
+		//아이디 일치하지 않을때 != 이 방법말고 다른게 있을까요!?
+	
 
 	/*
 	 * 키, 몸무게를 double로 입력 받고 BMI지수를 계산하여 계산 결과에 따라 저체중 / 정상체중 / 과체중 / 비만을 출력하세요. BMI
@@ -281,24 +283,97 @@ public class ConditionPractice {
 		}
 	}
 
-	/*ㄴ
+	/*
 	 * 키보드로 두 개의 양수와 연산 기호를 입력 받아 연산 기호에 맞춰 연산 결과를 출력하세요. (단, 양수가 아닌 값을 입력하거나 제시되어
 	 * 있지 않은 연산 기호를 입력 했을 시 “잘못 입력하셨습니다. 프로그램을 종료합니다.” 출력)
 	 * 
-	 * 피연산자1 입력 : 15 피연산자2 입력 : 4 연산자를 입력(+,-,*,/,%) : / 15 / 4 = 3
+	 * 피연산자1 입력 : 15 
+	 * 피연산자2 입력 : 4 
+	 * 연산자를 입력(+,-,*,/,%) : / 
+	 * 15 / 4 = 3
 	 * 
 	 */
 	public void practice9() {
 		
+		System.out.print("피연산자1 입력 : ");
+		int num1 = sc.nextInt();
+		
+		System.out.print("피연산자2 입력 : ");
+		int num2 = sc.nextInt();
+		
+		if(num1<=0 || num2<=0) {
+			System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
+		}
+		
+		System.out.print("연산자를 입력(+,-,*,/,%) : ");
+		char num3 = sc.next().charAt(0);
+		
+		System.out.print(num1);
+		System.out.print(num3);
+		System.out.print(num2);
+		System.out.println(" = ");
+		
+		switch(num3) {
+		
+		case '+' :
+			System.out.println(num1 + num2);
+			break;
+			
+		case '-' :
+			System.out.println(num1 - num2);
+			break;
+			
+		case '*' :
+			System.out.println(num1 * num2);
+			break;
+			
+		case '%' :
+			System.out.println(num1 % num2);
+			break;
+			
+		case '/' :
+			System.out.println(num1 / num2);
+			break;
+		}
 	}
-
 	/*
 	 * 아래 예시와 같이 메뉴를 출력하고 메뉴 번호를 누르면 “OO메뉴입니다“를, 종료 번호를 누르면 “프로그램이 종료됩니다.”를 출력하세요
 	 * 
-	 * 1. 입력 2. 수정 3. 조회 4. 삭제 9. 종료 메뉴 번호를 입력하세요 : 3 조회 메뉴입니다.
+	 * 1. 입력 
+	 * 2. 수정 
+	 * 3. 조회 
+	 * 4. 삭제 
+	 * 9. 종료 
+	 * 메뉴 번호를 입력하세요 : 3 
+	 * 조회 메뉴입니다.
 	 */
 	public void practice10() {
-
+		
+		int num = 0;
+		
+		System.out.print("메뉴 번호를 입력하세요 : ");
+		num = sc.nextInt();
+		
+		switch(num) {
+		
+		case 1 :
+			System.out.println("입력 메뉴입니다.");
+			num = sc.nextInt();
+		
+		case 2 :
+			System.out.println("수정 메뉴입니다.");
+			num = sc.nextInt();
+		case 3 :
+			System.out.println("조회 메뉴입니다.");
+			num = sc.nextInt();
+		case 4 :
+			System.out.println("삭제 메뉴입니다.");
+			num = sc.nextInt();
+		case 9 :
+			System.out.println("프로그램이 종료됩니다.");
+			num = sc.nextInt();
+		
+		}
 	}
 
 	/*
@@ -310,22 +385,91 @@ public class ConditionPractice {
 	 * 총 점이 70점 이상이면서 전체 강의의 70%이상 출석을 했을 경우 Pass, 아니면 Fail을 출력하세요.
 	 * 
 	 * 
-	 * 중간 고사 점수 : 80 기말 고사 점수 : 90 과제 점수 : 50 출석 회수 : 15 ===========결과========== 중간
-	 * 고사 점수(20) : 16.0 기말 고사 점수(30) : 27.0 과제 점수 (30) : 15.0 출석 점수 (20) : 15.0 총점 :
+	 * 중간 고사 점수 : 80 
+	 * 기말 고사 점수 : 90 
+	 * 과제 점수 : 50 
+	 * 출석 회수 : 15 
+	 * ===========결과========== 
+	 * 중간고사 점수(20) : 16.0
+	 * 기말 고사 점수(30) : 27.0 
+	 * 과제 점수 (30) : 15.0 
+	 * 출석 점수 (20) : 15.0 
+	 * 총점 :
 	 * 73.0 PASS
 	 * 
-	 * 중간 고사 점수 : 80 기말 고사 점수 : 30 과제 점수 : 60 출석 회수 : 18 ===========결과==========
+	 * 중간 고사 점수 : 80 
+	 * 기말 고사 점수 : 30 
+	 * 과제 점수 : 60 
+	 * 출석 회수 : 18 
+	 * ===========결과==========
 	 * FAIL [점수 미달] (총점 61.0)
 	 * 
-	 * 중간 고사 점수 : 90 기말 고사 점수 : 100 과제 점수 : 80 출석 회수 : 13 ===========결과==========
+	 * 중간 고사 점수 : 90 
+	 * 기말 고사 점수 : 100 
+	 * 과제 점수 : 80 
+	 * 출석 회수 : 13 
+	 * ===========결과==========
 	 * FAIL [출석 횟수 부족] (13/20)
 	 * 
-	 * 중간 고사 점수 : 100 기말 고사 점수 : 80 과제 점수 : 40 출석 회수 : 10 ===========결과==========
-	 * FAIL [출석 횟수 부족] (10/20) FAIL [점수 미달] (총점 66.0)
+	 * 중간 고사 점수 : 100 
+	 * 기말 고사 점수 : 80 
+	 * 과제 점수 : 40 
+	 * 출석 회수 : 10 
+	 * ===========결과==========
+	 * FAIL [출석 횟수 부족] (10/20) 
+	 * FAIL [점수 미달] (총점 66.0)
 	 * 
 	 */
 	public void practice11() {
+		
+		System.out.print("중간 고사 점수 : ");
+		int num1 = sc.nextInt();
+		
+		System.out.print("기말 고사 점수 : ");
+		int num2 = sc.nextInt();
+		
+		System.out.print("과제 점수 : ");
+		int num3 = sc.nextInt();
+			
+		System.out.print("출석 점수 : ");
+		int num4 = sc.nextInt();
 
-	}
+		System.out.println("===========결과==========");
+		
+		
+		float num5 = (float)(num1 - (num1 * 0.2));
+		float num6 = (float)(num2 - (num2 * 0.3));
+		float num7 = (float)(num3 - (num3 * 0.3));
+		
+		
+		if(((num5 + num6 + num7)/3 >=70) && (20*0.7)<=num4) {
+			
+			System.out.print("중간고사 점수(20) :  ");
+			System.out.println(num5);
+			
+			System.out.print("기말 고사 점수(30) : ");
+			System.out.println(num6);
+			
+			System.out.print("과제 점수 (30) : ");
+			System.out.println(num7);
 
-}
+			System.out.print("출석 점수 (20) : ");
+			System.out.println((float)num4);
+		
+		}
+			else if ((num5 + num6 + num7)/3 < 70 && (20*0.7) > num4 ) {
+				System.out.printf("FAIL [점수 미달] (총점 %.2f)", (num5 + num6 + num7)/3);
+				System.out.println();
+				System.out.println("FAIL [출석 횟수 부족] (" +  num4 + "/20)");
+		}
+			else if((num5 + num6 + num7)/3 < 70){
+				System.out.printf("FAIL [점수 미달] (총점 %.2f)", (num5 + num6 + num7)/3) ;
+			}
+		
+			else if((20*0.7) > num4) {
+				System.out.println("FAIL [출석 횟수 부족] (" +  num4 + "/20)");
+			}
+		
+			
+			}
+		}
