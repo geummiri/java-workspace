@@ -15,18 +15,19 @@ public class ConditionPractice {
 //		co.practice4();
 //		co.practice5();
 //		co.practice6();
-		co.practice7();
+//		co.practice7();
 //		co.practice8();
 //		co.practice9();
 //		co.practice10();
-//		co.practice11();
+		co.practice11();
 	}
 
 	/*
 	 * 키보드로 정수를 입력 받은 정수가 양수이면서 짝수일 때만 “짝수다”를 출력하고 짝수가 아니면 “홀수다“를 출력하세요. 양수가 아니면
 	 * “양수만 입력해주세요.”를 출력하세요.
 	 * 
-	 * 숫자를 한 개 입력하세요 : -8 양수만 입력해주세요.
+	 * 숫자를 한 개 입력하세요 : -8 
+	 * 양수만 입력해주세요.
 	 */
 	public void practice1() {
 
@@ -174,7 +175,7 @@ public class ConditionPractice {
 		} else if(cost>=100000) {
 			System.out.println(cost-(cost *0.05));
 		}
-		 //숫자 콤마 찍는법이 뭔지 뒤에 소수점 안나오게 하는법
+		 //숫자 콤마 찍는법이 뭔지 뒤에 소수점 안나오게 하는법이 뭔지 모르겠어요..
 
 	}
 
@@ -241,7 +242,6 @@ public class ConditionPractice {
 			System.out.println("아이디가 틀렸습니다.");
 		}
 	}
-		//아이디 일치하지 않을때 != 이 방법말고 다른게 있을까요!?
 	
 
 	/*

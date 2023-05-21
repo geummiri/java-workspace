@@ -72,20 +72,15 @@ class LoopPractice {
     	System.out.print("문자 : ");	
     	ch = sc.next().charAt(0);
     	
-    		//contain 메서드 사용되는지 
-    		//진짜 1도 모르겠다
-    		//문자열에서 문자 포함되있는지 확인하기 
     	int count = 0;
 
     	for(int i=0; i<str.length();i++) {
     		if(str.charAt(i) == ch) {
-    			
     			count++;
-    			
     		}
     		
         	System.out.println(str + "안에 포함된 " + ch + " 개수 : " + count);
-        	//break문 사용하면 결과값이 안나오고 break문 사용 안하면 답이 여러개 나오는데 방법을 모르겠습니다 ㅠ
+        	//break문 사용하면 결과값이 안나오고 break문 사용 안하면 답이 여러개 나와서 마지막 값만 추출하고 싶은데 방법을 모르겠습니다 ㅠ
     		//break;
     	
     	}	
