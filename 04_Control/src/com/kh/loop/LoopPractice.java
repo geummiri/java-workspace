@@ -22,16 +22,11 @@ class LoopPractice {
     	System.out.print("사용자 입력 : ");
     	num = sc.nextInt();
     	
-    	for(int i=1; i<=100 ; i++) {
+    	for(int i=num; i>=1 ; i--) {
     		
     		if(num >= i)
-    		System.out.println(num);
-    		
-    		
-    		
+    		System.out.println(i);
     	}
-    	
-
     }
 
     // 1+(-2)+3+(-4)+...과 같은 식으로 계속 더해나갔을 때, 몇까지 더해야 총합이 100 이상 되는지 출력하시오.
@@ -49,7 +44,7 @@ class LoopPractice {
     					sum += i;
     		}
     				if(sum >= 100) {
-    					System.out.println(sum);
+    					System.out.println(i);
     				break;}
     	}	
     			
@@ -67,18 +62,37 @@ class LoopPractice {
     */
     public void method3() {
     	
+    	String str = "";
+    	char ch;
+
+    	
     	System.out.print("문자열 : ");
-    	String str = sc.next();
+    	str = sc.next();
     	
-    	System.out.print("문자 : ");
-    	str = sc.nextLine().charAt(1);
+    	System.out.print("문자 : ");	
+    	ch = sc.next().charAt(0);
     	
+    		//contain 메서드 사용되는지 
+    		//진짜 1도 모르겠다
+    		//문자열에서 문자 포함되있는지 확인하기 
+    	int count = 0;
+
+    	for(int i=0; i<str.length();i++) {
+    		if(str.charAt(i) == ch) {
+    			
+    			count++;
+    			
+    		}
+    		
+        	System.out.println(str + "안에 포함된 " + ch + " 개수 : " + count);
+        	//break문 사용하면 결과값이 안나오고 break문 사용 안하면 답이 여러개 나오는데 방법을 모르겠습니다 ㅠ
+    		//break;
     	
-    	
-    	System.out.println();
+    	}	
     	
 
-    }
+    	
+    	}
 
     /*
         0이 나올 때까지 숫자를 출력하시오. (random 사용! 1~10)
@@ -91,6 +105,21 @@ class LoopPractice {
         0
      */
     public void method4() {
+    	
+
+    	for(int i=1; ; i++) {
+    		
+        	int num = (int)(Math.random()*10);
+
+    		if(num>=1 && num<=10) {
+    		System.out.println(num);
+    		}
+    		
+    		else if(num == 0) {
+    		System.out.println(num);
+    		break;}
+    	}
+    	
 
     }
 
@@ -106,9 +135,36 @@ class LoopPractice {
 
      */
     public void method5() {
-
-    }
-
+    	
+    	int a=0;
+		int b=0;
+		int c=0;
+		int d=0;
+		int e=0;
+		int f=0;
+    		
+    	for(int i=1; i<=10 ; i++) {
+    
+    		int num = (int)(Math.random() * 6 + 1);
+    		
+    		switch(num) {
+    		
+    		case 1: a++; break;
+    		case 2: b++; break;
+    		case 3: c++; break;
+    		case 4: d++; break;
+    		case 5: e++; break;
+    		case 6: f++; break;
+    		} //10번 돌린 다음에 값 추출 
+    	}
+    		System.out.println("1 : " + a);
+    		System.out.println("2 : " + b);
+    		System.out.println("3 : " + c);
+    		System.out.println("4 : " + d);
+    		System.out.println("5 : " + e);
+    		System.out.println("6 : " + f);
+    		
+    		}
     /*
         사용자의 이름을 입력하고 컴퓨터와 가위바위보를 하세요. 
         컴퓨터가 가위인지 보인지 주먹인지는 랜덤한 수를 통해서 결정하도록 하고, 사용자에게는 직접 가위바위보를 받으세요.
@@ -132,16 +188,189 @@ class LoopPractice {
         이겼습니다 !
     */
     public void method6() {
+    	
+    	String name = "";
+    	String a = "";
+    	
+    	System.out.print("당신의 이름을 입력해주세요 : ");
+    	name = sc.next();
+    	
+    	System.out.print("가위바위보 : ");
+    	a = sc.next();
+    	
 
+    	int num = (int)Math.random()* 3 +1;
+    	
+    	if(num == 1) {
+    		System.out.println("컴퓨터 : 가위");
+    	} else if (num == 2) {
+    		System.out.println("컴퓨터 : 바위");
+    	} else if(num == 3){
+    		System.out.println("컴퓨터 : 보 ");
+    	}
+    	
+    	System.out.println(name + " : " + a);
+    	
+    	int count1 = 0;
+    	int count2 = 0;
+    	int count3 = 0;
+    	
+    	for(int i=1; ; i++) {
+    		
+    		if(num == 1) {
+    		
+    		 if("가위".equals(a)) {
+    			System.out.println("비겼습니다.");
+    			System.out.println();
+    	    	
+    	    	System.out.print("가위바위보 : ");
+    	    	a = sc.next();
+    	    	
+    	    	if(num == 1) {
+    	    		System.out.println("컴퓨터 : 가위");
+    	    	} else if (num == 2) {
+    	    		System.out.println("컴퓨터 : 바위");
+    	    	} else if(num == 3){
+    	    		System.out.println("컴퓨터 : 보 ");
+    	    	}
+    	    	count1++;
+    	    	System.out.println(name + " : " + a);
+    	    	
+    		}
+    		else if("보".equals(a)) {
+    			System.out.println("졌습니다.");
+    			System.out.println();
+    	    	
+    	    	System.out.print("가위바위보 : ");
+    	    	a = sc.next();
+    	    	
+    	    	if(num == 1) {
+    	    		System.out.println("컴퓨터 : 가위");
+    	    	} else if (num == 2) {
+    	    		System.out.println("컴퓨터 : 바위");
+    	    	} else if(num == 3){
+    	    		System.out.println("컴퓨터 : 보 ");
+    	    	}
+    	    	count2++;
+    	    	System.out.println(name + " : " + a);
+    	    	
+    	    	
+    		}
+    		else if("바위".equals(a)) {
+    			count3++;
+    			System.out.println("이겼습니다.");
+    			System.out.println(count1 +"번 비기고, " + count2 + "번 졌고, " + count3 + "번 이겼습니다.");
+
+    			break;
+    		}
+    		 
+    		 if(num == 2) {
+    	    		
+        		 if("바위".equals(a)) {
+        			System.out.println("비겼습니다.");
+        			System.out.println();
+        	    	
+        	    	System.out.print("가위바위보 : ");
+        	    	a = sc.next();
+        	    	
+        	    	if(num == 1) {
+        	    		System.out.println("컴퓨터 : 가위");
+        	    	} else if (num == 2) {
+        	    		System.out.println("컴퓨터 : 바위");
+        	    	} else if(num == 3){
+        	    		System.out.println("컴퓨터 : 보 ");
+        	    	}
+        	    	count1++;
+        	    	System.out.println(name + " : " + a);
+        	    	
+        		}
+        		else if("가위".equals(a)) {
+        			System.out.println("졌습니다.");
+        			System.out.println();
+        	    	
+        	    	System.out.print("가위바위보 : ");
+        	    	a = sc.next();
+        	    	
+        	    	if(num == 1) {
+        	    		System.out.println("컴퓨터 : 가위");
+        	    	} else if (num == 2) {
+        	    		System.out.println("컴퓨터 : 바위");
+        	    	} else if(num == 3){
+        	    		System.out.println("컴퓨터 : 보 ");
+        	    	}
+        	    	count2++;
+        	    	System.out.println(name + " : " + a);
+        	    	
+        		}
+        		else if("보".equals(a)) {
+        			count3++;
+        			System.out.println("이겼습니다.");
+        			System.out.println(count1 +"번 비기고, " + count2 + "번 졌고, " + count3 + "번 이겼습니다.");
+
+        			break;
+        		}
+        		 
+        	 if(num == 3) {
+     	    		
+            		 if("보".equals(a)) {
+            			System.out.println("비겼습니다.");
+            			System.out.println();
+            	    	
+            	    	System.out.print("가위바위보 : ");
+            	    	a = sc.next();
+            	    	
+            	    	if(num == 1) {
+            	    		System.out.println("컴퓨터 : 가위");
+            	    	} else if (num == 2) {
+            	    		System.out.println("컴퓨터 : 바위");
+            	    	} else if(num == 3){
+            	    		System.out.println("컴퓨터 : 보 ");
+            	    	}
+            	    	count1++;
+            	    	System.out.println(name + " : " + a);
+            	    	
+            		}
+            		else if("바위".equals(a)) {
+            			System.out.println("졌습니다.");
+            			
+            			System.out.println();
+            			
+            	    	System.out.print("가위바위보 : ");
+            	    	a = sc.next();
+            	    	
+            	    	if(num == 1) {
+            	    		System.out.println("컴퓨터 : 가위");
+            	    	} else if (num == 2) {
+            	    		System.out.println("컴퓨터 : 바위");
+            	    	} else if(num == 3){
+            	    		System.out.println("컴퓨터 : 보 ");
+            	    	}
+            	    	count2++;
+            	    	
+            	    	System.out.println(name + " : " + a);
+            	    	
+            		}
+            		else if("가위".equals(a)) {
+            			count3++;
+            			System.out.println("이겼습니다.");
+            			System.out.println(count1 +"번 비기고, " + count2 + "번 졌고, " + count3 + "번 이겼습니다.");
+            			break; 
+            		}
+        	 	}
+    		 }
+    		}
+    	}
     }
-
-
+    	
+   
+    		
+    	
 	public static void main(String[] args) {
 	  LoopPractice l = new LoopPractice();
 	  
 //	  l.method1();
-	  l.method2();
-//	  l.method3();
+//	  l.method2();
+	  l.method3();
 //	  l.method4();
 //	  l.method5();
 //	  l.method6();
