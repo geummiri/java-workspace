@@ -79,12 +79,12 @@ class LoopPractice {
     			count++;
     		}
     		
-        	System.out.println(str + "안에 포함된 " + ch + " 개수 : " + count);
         	//break문 사용하면 결과값이 안나오고 break문 사용 안하면 답이 여러개 나와서 마지막 값만 추출하고 싶은데 방법을 모르겠습니다 ㅠ
     		//break;
     	
     	}	
     	
+    	System.out.println(str + "안에 포함된 " + ch + " 개수 : " + count);
 
     	
     	}
