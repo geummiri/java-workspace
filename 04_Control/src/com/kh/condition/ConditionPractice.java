@@ -13,13 +13,13 @@ public class ConditionPractice {
 //		co.practice2();
 //		co.practice3();
 //		co.practice4();
-//		co.practice5();
+		co.practice5();
 //		co.practice6();
 //		co.practice7();
 //		co.practice8();
 //		co.practice9();
 //		co.practice10();
-		co.practice11();
+//		co.practice11();
 	}
 
 	/*
@@ -33,19 +33,16 @@ public class ConditionPractice {
 
 		int num = 0;
 
-		System.out.println("숫자를 입력해주세요. > ");
+		System.out.print("숫자를 입력해주세요. > ");
 		num = sc.nextInt();
 
-		if (num % 2 == 0) {
-			System.out.println("짝수다");
-		} else if (num % 2 == 1) {
-			System.out.println("홀수다");
-		} else if (num < 0) {
-			System.out.println("양수만 입력해주세요.");
-		}
+		if(num % 2 == 0 && num > 0) System.out.println("짝수다");
+		else if(num % 2 == 1 && num > 0) System.out.println("홀수다");
+		else if(num <= 0) System.out.println("양수만 입력해주세요.");
+}
 
-	}
-
+//	조건문 1번 같은 경우는 양수인 경우를 중첩 if문 사용하는 것 추천드려요! 짝수, 홀수 모두 양수여야 하는 것도 조건!
+	
 	/*
 	 * 정수 num1과 num2가 매개변수로 주어진다. 두 수가 같으면 1 다르면 -1을 출력하세요.
 	 * 
@@ -173,7 +170,7 @@ public class ConditionPractice {
 		} else if(cost>=300000) {
 			System.out.println(cost-(cost *0.1));
 		} else if(cost>=100000) {
-			System.out.println(cost-(cost *0.05));
+			System.out.printf("%,d", cost-(cost *0.05));
 		}
 		 //숫자 콤마 찍는법이 뭔지 뒤에 소수점 안나오게 하는법이 뭔지 모르겠어요..
 

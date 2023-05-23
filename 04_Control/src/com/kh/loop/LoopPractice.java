@@ -23,12 +23,12 @@ class LoopPractice {
     	num = sc.nextInt();
     	
     	for(int i=num; i>=1 ; i--) {
-    		
-    		if(num >= i)
+
     		System.out.println(i);
     	}
     }
-
+    
+    // 1번 문제는 조건문과 상관없이 출력될거에요!
     // 1+(-2)+3+(-4)+...과 같은 식으로 계속 더해나갔을 때, 몇까지 더해야 총합이 100 이상 되는지 출력하시오.
     public void method2() {
     	
@@ -78,10 +78,6 @@ class LoopPractice {
     		if(str.charAt(i) == ch) {
     			count++;
     		}
-    		
-        	//break문 사용하면 결과값이 안나오고 break문 사용 안하면 답이 여러개 나와서 마지막 값만 추출하고 싶은데 방법을 모르겠습니다 ㅠ
-    		//break;
-    	
     	}	
     	
     	System.out.println(str + "안에 포함된 " + ch + " 개수 : " + count);
@@ -104,7 +100,7 @@ class LoopPractice {
 
     	for(int i=1; ; i++) {
     		
-        	int num = (int)(Math.random()*10);
+        	int num = (int)(Math.random()*10+1);
 
     		if(num>=1 && num<=10) {
     		System.out.println(num);
@@ -131,34 +127,43 @@ class LoopPractice {
      */
     public void method5() {
     	
-    	int a=0;
-		int b=0;
-		int c=0;
-		int d=0;
-		int e=0;
-		int f=0;
-    		
-    	for(int i=1; i<=10 ; i++) {
-    
-    		int num = (int)(Math.random() * 6 + 1);
-    		
-    		switch(num) {
-    		
-    		case 1: a++; break;
-    		case 2: b++; break;
-    		case 3: c++; break;
-    		case 4: d++; break;
-    		case 5: e++; break;
-    		case 6: f++; break;
-    		} //10번 돌린 다음에 값 추출 
-    	}
-    		System.out.println("1 : " + a);
-    		System.out.println("2 : " + b);
-    		System.out.println("3 : " + c);
-    		System.out.println("4 : " + d);
-    		System.out.println("5 : " + e);
-    		System.out.println("6 : " + f);
-    		
+    	int[] counts = new int[6];
+        for (int i = 0; i < 10; i++) {
+            int randomValue = (int) (Math.random() * 6) + 1;
+            counts[randomValue - 1]++;
+        }
+        for (int i = 0; i < 6; i++) {
+            System.out.println((i + 1) + " : " + counts[i]);
+        }
+//    	
+//    	int a=0;
+//		int b=0;
+//		int c=0;
+//		int d=0;
+//		int e=0;
+//		int f=0;
+//    		
+//    	for(int i=1; i<=10 ; i++) {
+//    
+//    		int num = (int)(Math.random() * 6 + 1);
+//    		
+//    		switch(num) {
+//    		
+//    		case 1: a++; break;
+//    		case 2: b++; break;
+//    		case 3: c++; break;
+//    		case 4: d++; break;
+//    		case 5: e++; break;
+//    		case 6: f++; break;
+//    		} //10번 돌린 다음에 값 추출 
+//    	}
+//    		System.out.println("1 : " + a);
+//    		System.out.println("2 : " + b);
+//    		System.out.println("3 : " + c);
+//    		System.out.println("4 : " + d);
+//    		System.out.println("5 : " + e);
+//    		System.out.println("6 : " + f);
+//    		
     		}
     /*
         사용자의 이름을 입력하고 컴퓨터와 가위바위보를 하세요. 
@@ -365,9 +370,9 @@ class LoopPractice {
 	  
 //	  l.method1();
 //	  l.method2();
-	  l.method3();
+//	  l.method3();
 //	  l.method4();
-//	  l.method5();
+	  l.method5();
 //	  l.method6();
 }
 }

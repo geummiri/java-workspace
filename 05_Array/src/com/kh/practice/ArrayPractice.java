@@ -10,9 +10,9 @@ public class ArrayPractice {
 		ArrayPractice arr = new ArrayPractice();
 //	arr.method1();
 //	arr.method2();
-//		arr.method3();
-	arr.method4();
-//	arr.method5();
+//	arr.method3();
+//	arr.method4();
+	arr.method5();
 
 	}
 
@@ -116,11 +116,9 @@ public class ArrayPractice {
 			if(i>=8) 
 				num[i] = '*';
 				
-			
 			else 
 				num[i] = usernum.charAt(i);
 				
-			
 			System.out.print(num[i]);
 
 		}
@@ -134,12 +132,32 @@ public class ArrayPractice {
 	 * 사용자가 입력한 단어를 거꾸로 뒤집어서 출력하세요.
 	 * 
 	 * 단어 입력 : programming gnimmargorp
+	 * 0 (i)-> 10(length-1)
+	 * 1 (i+1)-> 9 (length-1)-(i+1)
+	 * 2 -> 8
 	 * 
 	 */
 	
 	public void method5() {
 		
-
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("단어 입력 :  ");
+		String str = sc.nextLine();
+		
+		char[] ch = new char[str.length()];
+		
+		for (int i=ch.length-1; i>=0; i--) {
+			
+			System.out.print(str.charAt(i));
+			
+			}
+		
+		
 	}
+	
 }
+		
+
+
 
