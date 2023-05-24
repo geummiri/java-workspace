@@ -52,6 +52,7 @@ class LoopPractice {
    
     
 
+    
     /*
         사용자로부터 문자열을 입력 받고 문자열에서 검색될 문자를 입력 받아 해당 문자열에 그 문자가 몇 개 있는지 개수를 출력하세요. 
 
@@ -98,7 +99,7 @@ class LoopPractice {
     public void method4() {
     	
 
-    	for(int i=1; ; i++) {
+    	for(int i=1; i>=0; i++) {
     		
         	int num = (int)(Math.random()*10+1);
 
@@ -127,13 +128,15 @@ class LoopPractice {
      */
     public void method5() {
     	
-    	int[] counts = new int[6];
+    	int[] count = new int[6];
+    	
         for (int i = 0; i < 10; i++) {
-            int randomValue = (int) (Math.random() * 6) + 1;
-            counts[randomValue - 1]++;
+            int random = (int) (Math.random() * 6) + 1;
+            count[random - 1]++;
         }
+        
         for (int i = 0; i < 6; i++) {
-            System.out.println((i + 1) + " : " + counts[i]);
+            System.out.println((i + 1) + " : " + count[i]);
         }
 //    	
 //    	int a=0;
@@ -189,25 +192,12 @@ class LoopPractice {
     */
     public void method6() {
     	
-    	String name = "";
-    	String a = "";
     	
     	System.out.print("당신의 이름을 입력해주세요 : ");
-    	name = sc.next();
+    	String name = sc.nextLine();
     	
     	System.out.print("가위바위보 : ");
-    	a = sc.next();
-    	
-
-    	int num = (int)Math.random()* 3 +1;
-    	
-    	if(num == 1) {
-    		System.out.println("컴퓨터 : 가위");
-    	} else if (num == 2) {
-    		System.out.println("컴퓨터 : 바위");
-    	} else if(num == 3){
-    		System.out.println("컴퓨터 : 보 ");
-    	}
+    	String a = sc.next();
     	
     	System.out.println(name + " : " + a);
     	
@@ -215,8 +205,10 @@ class LoopPractice {
     	int count2 = 0;
     	int count3 = 0;
     	
-    	for(int i=1; ; i++) {
+    	for(int i=1; i>=0; i++) {
     		
+        	int num = (int)(Math.random()* 3 + 1);
+
     		if(num == 1) {
     		
     		 if("가위".equals(a)) {
@@ -253,7 +245,6 @@ class LoopPractice {
     	    	}
     	    	count2++;
     	    	System.out.println(name + " : " + a);
-    	    	
     	    	
     		}
     		else if("바위".equals(a)) {
@@ -372,7 +363,7 @@ class LoopPractice {
 //	  l.method2();
 //	  l.method3();
 //	  l.method4();
-	  l.method5();
-//	  l.method6();
+//	  l.method5();
+	  l.method6();
 }
 }

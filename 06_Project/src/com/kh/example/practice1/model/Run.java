@@ -10,11 +10,12 @@ public class Run {
 		m.printName();
 		
 		Scanner sc = new Scanner(System.in);
-		System.out.println("변경할 이름 > ");
+		System.out.println("변경할 이름 : ");
 		String name = sc.nextLine();
 		
 		m.changeName(name);
 		m.printName();
 	
+		
 	}
 }

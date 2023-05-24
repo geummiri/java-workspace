@@ -9,11 +9,11 @@ public class ConditionPractice {
 	public static void main(String[] args) {
 
 		ConditionPractice co = new ConditionPractice();
-//		co.practice1();
+		co.practice1();
 //		co.practice2();
 //		co.practice3();
 //		co.practice4();
-		co.practice5();
+//		co.practice5();
 //		co.practice6();
 //		co.practice7();
 //		co.practice8();
@@ -36,10 +36,22 @@ public class ConditionPractice {
 		System.out.print("숫자를 입력해주세요. > ");
 		num = sc.nextInt();
 
-		if(num % 2 == 0 && num > 0) System.out.println("짝수다");
-		else if(num % 2 == 1 && num > 0) System.out.println("홀수다");
-		else if(num <= 0) System.out.println("양수만 입력해주세요.");
-}
+		
+		if(num <= 0) {
+			System.out.println("양수만 입력해주세요.");
+		}
+		else {
+			if(num % 2 == 0) {
+				System.out.println("짝수다"); 
+			}
+
+			else {
+				System.out.println("홀수다");
+			}
+
+//		if(num % 2 == 0 && num > 0) System.out.println("짝수다");
+//		else if(num % 2 == 1 && num > 0) 
+//		else if(num <= 0) ;
 
 //	조건문 1번 같은 경우는 양수인 경우를 중첩 if문 사용하는 것 추천드려요! 짝수, 홀수 모두 양수여야 하는 것도 조건!
 	
@@ -159,21 +171,19 @@ public class ConditionPractice {
 	 * 464,000
 	 */
 	public void practice5() {
-		
+		//숫자 콤마 찍는법 : int로 바꾸고 printf로 바꾸기
 		int cost = 0;
 		
 		System.out.print("구매한 옷 가격 : ");
 		cost = sc.nextInt();
 		
 		if(cost>=500000) {
-			System.out.println(cost-(cost *0.2));
+			System.out.printf("%,d",(int)(cost-(cost *0.2)));
 		} else if(cost>=300000) {
-			System.out.println(cost-(cost *0.1));
+			System.out.printf("%,d",(int)(cost-(cost *0.1)));
 		} else if(cost>=100000) {
-			System.out.printf("%,d", cost-(cost *0.05));
+			System.out.printf("%,d",(int)(cost-(cost *0.05)));
 		}
-		 //숫자 콤마 찍는법이 뭔지 뒤에 소수점 안나오게 하는법이 뭔지 모르겠어요..
-
 	}
 
 	/*
@@ -219,7 +229,7 @@ public class ConditionPractice {
 	 */
 	
 	public void practice7() {
-		
+		// 조건이 겹치는 부분들 바깥으로 중첩 if문 사용하는 것 추천!
 		String id = "";
 		int pw = 0;
 		
@@ -229,13 +239,14 @@ public class ConditionPractice {
 		System.out.print("비밀번호 : ");
 		pw = sc.nextInt();
 		
+		
 		if("happy".equals(id) && 1234 == pw) {
 			System.out.println("로그인 성공!");
 			
-		} else if ("happy".equals(id) && 1234 != pw) {
+		} else if (1234 != pw) {
 			System.out.println("비밀번호가 틀렸습니다.");
 			
-		} else if (!("happy".equals(id)) && 1234 == pw) {
+		} else if (!("happy".equals(id))) {
 			System.out.println("아이디가 틀렸습니다.");
 		}
 	}
@@ -345,7 +356,7 @@ public class ConditionPractice {
 	 * 조회 메뉴입니다.
 	 */
 	public void practice10() {
-		
+		//switch문은 break 만날때까지 계속 출력되기때문에 break 꼭 사용하기!!!
 		int num = 0;
 		
 		System.out.print("메뉴 번호를 입력하세요 : ");
@@ -356,20 +367,24 @@ public class ConditionPractice {
 		case 1 :
 			System.out.println("입력 메뉴입니다.");
 			num = sc.nextInt();
+			break;
 		
 		case 2 :
 			System.out.println("수정 메뉴입니다.");
 			num = sc.nextInt();
+			break;
 		case 3 :
 			System.out.println("조회 메뉴입니다.");
 			num = sc.nextInt();
+			break;
 		case 4 :
 			System.out.println("삭제 메뉴입니다.");
 			num = sc.nextInt();
+			break;
 		case 9 :
 			System.out.println("프로그램이 종료됩니다.");
 			num = sc.nextInt();
-		
+			break;
 		}
 	}
 

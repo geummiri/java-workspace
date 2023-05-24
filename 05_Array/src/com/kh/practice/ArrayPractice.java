@@ -124,40 +124,32 @@ public class ArrayPractice {
 		}
 		} 
 	
-		//charAt(i) 사용해서 8번째부터는 *로 표기하고싶어 
-	
-		
 		
 	/*
 	 * 사용자가 입력한 단어를 거꾸로 뒤집어서 출력하세요.
 	 * 
 	 * 단어 입력 : programming gnimmargorp
-	 * 0 (i)-> 10(length-1)
-	 * 1 (i+1)-> 9 (length-1)-(i+1)
-	 * 2 -> 8
 	 * 
 	 */
 	
 	public void method5() {
-		
+
 		Scanner sc = new Scanner(System.in);
-		
+
 		System.out.print("단어 입력 :  ");
 		String str = sc.nextLine();
-		
+
 		char[] ch = new char[str.length()];
 		
-		for (int i=ch.length-1; i>=0; i--) {
-			
-			System.out.print(str.charAt(i));
-			
-			}
-		
-		
+		for(int i=ch.length-1; i>=0; i--) {
+			ch[i] = str.charAt(i);
+			System.out.print(ch[i]);
+		}
 	}
-	
 }
-		
+
+
+
 
 
 

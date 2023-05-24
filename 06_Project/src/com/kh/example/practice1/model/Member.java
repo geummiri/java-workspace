@@ -11,11 +11,10 @@ public class Member {
 	public String phone;
 	public String email;
 	
-	
-	
 	public void changeName(String name) { //매개변수
 		memberName = name;
 	};
+	
 	public void printName() {
 		System.out.println(memberName);
 	}
