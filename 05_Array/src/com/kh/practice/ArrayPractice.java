@@ -136,7 +136,7 @@ public class ArrayPractice {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("단어 입력 :  ");
+		System.out.print("단어 입력 : ");
 		String str = sc.nextLine();
 
 		char[] ch = new char[str.length()];

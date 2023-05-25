@@ -40,7 +40,7 @@ public class ConditionPractice {
 		if(num <= 0) {
 			System.out.println("양수만 입력해주세요.");
 		}
-		else {
+		else 
 			if(num % 2 == 0) {
 				System.out.println("짝수다"); 
 			}
@@ -48,6 +48,7 @@ public class ConditionPractice {
 			else {
 				System.out.println("홀수다");
 			}
+		}
 
 //		if(num % 2 == 0 && num > 0) System.out.println("짝수다");
 //		else if(num % 2 == 1 && num > 0) 

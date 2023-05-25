@@ -2,15 +2,68 @@ package com.youtube.model;
 
 import java.util.Date;
 
+
 public class Video {
 
-	public String title;
-	public String comment;
-	public Date uploatdAt;
-	public int count;
-	public String imgUrl;
-	public String fileUrl;
+	private String title;
+	private String comment;
+	private Date uploatdAt;
+	private int count;
+	private String imgUrl;
+	private String fileUrl;
+	
+	public Video() {}
+	
+	public String getTitle() {
+		return title;
+	}
 
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+	public Date getUploatdAt() {
+		return uploatdAt;
+	}
+
+	public void setUploatdAt(Date uploatdAt) {
+		this.uploatdAt = uploatdAt;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public String getImgUrl() {
+		return imgUrl;
+	}
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+
+	public String getFileUrl() {
+		return fileUrl;
+	}
+
+	public void setFileUrl(String fileUrl) {
+		this.fileUrl = fileUrl;
+	}
+
+	
+	
 	public boolean login() { //로그인
 
 		return false;
@@ -32,7 +85,6 @@ public class Video {
 		return false;
 	}
 
-	
 	/*CRUD
 	 *Create : 추가
 	 *Read : 읽기(1개, 목록)
