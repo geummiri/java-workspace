@@ -74,8 +74,6 @@ public class Application {
 			
 			case 1 : 
 				this.calcCircum();
-				System.out.println();
-				
 				break;
 				
 			case 2 :
@@ -144,6 +142,7 @@ public class Application {
 		
 		System.out.print("반지름 : ");
 		int r = sc.nextInt();
+		
 		System.out.println(cc.calcArea(x, y, r));
 	}
 		
@@ -160,6 +159,7 @@ public class Application {
 		
 		System.out.print("너비 : ");
 		int w = sc.nextInt();
+		
 		System.out.println(rc.clacPerimeter(x, y, h, w));
 	}
 	
