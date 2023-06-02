@@ -1,6 +1,6 @@
 package com.kh.overriding.model;
 
-public class VIPCustomer extends Customer{
+public class VIPCustomer extends Customer {
 	
 	private double saleRatio; //할인율
 
