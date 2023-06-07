@@ -140,7 +140,7 @@ import com.kh.list.model.Person;
 			
 			//나이 순서대로 출력 -> Person 클래스에서 --> 하단에 public int compareTo(Person o) 메서드에서 조건문 작성해주기
 			
-			Collections.sort(list); //Person클래스에서 implemensts Comparable<Person> 작성해주고 add 해줘야함
+			Collections.sort(list); //Person클래스에서 implements Comparable<Person> 작성해주고 add compare to() override 해줘야함
 //			System.out.println(list); 
 			
 			//나이순서 -> 이름순서대로 -> 조건문 : return this.name.compareTo(name);
@@ -159,7 +159,6 @@ import com.kh.list.model.Person;
 			public void method3() {
 			//11.indexOf(Object o) : 해당 객체가 위치하는 인덱스값 반환
 			List<String> list = new ArrayList<>();
-			list.add("banana");
 			list.add("apple");
 			list.add("orange");
 			list.add("mango");
