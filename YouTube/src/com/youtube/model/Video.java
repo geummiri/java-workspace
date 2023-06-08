@@ -1,6 +1,7 @@
 package com.youtube.model;
 
 import java.util.Date;
+import java.util.List;
 
 
 public class Video {
@@ -8,105 +9,75 @@ public class Video {
 	private String title;
 	private String comment;
 	private Date uploatdAt;
-	private int count;
+	private int views; // 조회수
 	private String imgUrl;
 	private String fileUrl;
+	private String desc; //설명
+	private char kind; //shorts & video 둘중하나!
 	
-	public Video() {}
-	
+	private List<Comment> comments;
+	private Category category;
 	public String getTitle() {
 		return title;
 	}
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
 	public String getComment() {
 		return comment;
 	}
-
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-
 	public Date getUploatdAt() {
 		return uploatdAt;
 	}
-
 	public void setUploatdAt(Date uploatdAt) {
 		this.uploatdAt = uploatdAt;
 	}
-
-	public int getCount() {
-		return count;
+	public int getViews() {
+		return views;
 	}
-
-	public void setCount(int count) {
-		this.count = count;
+	public void setViews(int views) {
+		this.views = views;
 	}
-
 	public String getImgUrl() {
 		return imgUrl;
 	}
-
 	public void setImgUrl(String imgUrl) {
 		this.imgUrl = imgUrl;
 	}
-
 	public String getFileUrl() {
 		return fileUrl;
 	}
-
 	public void setFileUrl(String fileUrl) {
 		this.fileUrl = fileUrl;
 	}
-
+	public String getDesc() {
+		return desc;
+	}
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+	public char getKind() {
+		return kind;
+	}
+	public void setKind(char kind) {
+		this.kind = kind;
+	}
+	public List<Comment> getComments() {
+		return comments;
+	}
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 	
-	
-	public boolean login() { //로그인
-
-		return false;
-	}	
-	public boolean signup() { //회원가입
-
-		return false;
-	}
-	public User viewProfile() { //프로필 넣기
-
-		return null;
-	}
-	public User updateProfile() { //프로필 수정
-
-		return null;
-	}
-	public boolean deleteProfile() { //프로필 삭제
-
-		return false;
-	}
-
-	/*CRUD
-	 *Create : 추가
-	 *Read : 읽기(1개, 목록)
-	 *Update : 수정
-	 *Delete : 삭제
-	 */
-
-	public Video upload() {//동영상 업로드
-		return null;
-	}
-	public Video[] videolist() {//동영상 목록
-		return null;
-	}
-	public Video viewVideo() {//영상 1개 보기
-		 return null;
-	}
-	public Video update() {//동영상 수정
-		 return null;
-	}
-	public boolean delete() {//동영상 삭제
-		return false;
-	}
 	
 	
 }
