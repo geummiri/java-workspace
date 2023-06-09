@@ -1,5 +1,7 @@
 package com.kh.model;
 
+import java.util.Objects;
+
 public class Student implements Comparable<Student>{
 
 	private String name;
@@ -67,6 +69,26 @@ public class Student implements Comparable<Student>{
 	public String toString() {
 		return "Student [name=" + name + ", age=" + age + ", gender=" + gender + ", math=" + math + ", english="
 				+ english + "]";
+	}
+	
+	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(age, english, gender, math, name);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Student other = (Student) obj;
+		return age == other.age && english == other.english && Objects.equals(gender, other.gender)
+				&& math == other.math && Objects.equals(name, other.name);
 	}
 
 	@Override
