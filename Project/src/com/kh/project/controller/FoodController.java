@@ -1,21 +1,19 @@
-package com.kh.practice3.controller;
+package com.kh.project.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Set;
 
-import com.kh.map.model.Snack;
-import com.kh.practice3.model.Farm;
+import com.kh.project.model.Food;
 
-public class FarmController {
+public class FoodController {
 
-	private HashMap<Farm, Integer> hMap = new HashMap<>(); // 마트에서 농산물 저장용 hashCode() Farm클래스가서 생성하기
-	private ArrayList<Farm> list = new ArrayList<>();      // 고객이 구매한 농산물 저장용
 	
-//	Set<Farm> key = hMap.keySet(); //key값 먼저 지정하기
+	private HashMap<Food, Integer> hMap = new HashMap<>(); // 마트에서 음식 저장용 hashCode() Food클래스가서 생성하기
+	private ArrayList<Food> list = new ArrayList<>();      // 고객이 구매한 음식 저장용
 	
-	public boolean addNewKind(Farm f, int amount) {
+	
+	public boolean addNewKind(Food f, int amount) {
 		// containsKey() : 해당 map에 key가 존재하는가
 		// 전달 받은 f가 hMap 안에 key로 존재하지 않을 때
 		if(!(hMap.containsKey(f))) {
@@ -26,8 +24,7 @@ public class FarmController {
 		// 존재할 경우 false 반환
 		return false; }
 	
-	
-	public boolean removeKind(Farm f) {
+	public boolean removeKind(Food f) {
 		
 		// 전달 받은 f가 hMap 안에 key로 존재할 때
 		if(hMap.containsKey(f)) {
@@ -40,7 +37,7 @@ public class FarmController {
 		return false;
 	}
 	
-	public boolean changeAmount(Farm f, int amount) {
+	public boolean changeAmount(Food f, int amount) {
 		
 		// 전달 받은 f가 hMap 안에 key로 존재할 때 
 		if(hMap.containsKey(f)) {
@@ -53,14 +50,15 @@ public class FarmController {
 		return false;
 	}
 	
-	public HashMap<Farm, Integer> printFarm() {
+	public HashMap<Food, Integer> printFood() {
 		
 		return hMap ;
 	}
 	
 	// 고객 관련 기능 ------------------------------------------------------------
+	//고객 음식 구매하기 
 	
-	public boolean buyFarm(Farm f) {
+	public boolean buyFood(Food f) {
 		
 		if(hMap.containsKey(f) && hMap.get(f) > 0) {
 		// 전달 받은 f가 hMap 안에 존재하면서 그 f의 수량이 1개 이상 일 때
@@ -75,7 +73,7 @@ public class FarmController {
 		return false;
 	}
 	
-	public boolean removeFarm(Farm f) {
+	public boolean removeFood(Food f) {
 		
 		// 전달 받은 f가 list에 존재할 때
 		if(list.contains(f)) {
@@ -89,7 +87,24 @@ public class FarmController {
 		return false;
 	}
 	
-	public ArrayList<Farm> printBuyFarm() {
+	public ArrayList<Food> printBuyFood() {
 		return list;
 	}
+	
+	public String buyFoodList() {
+		String temp = "";
+		Set<Food> key = hMap.keySet();
+		for (Food food : key) {
+			temp += food.getKind() + " : "  + food.getName() + hMap.get(key);
+		}
+//		   for (String string : key) {
+//			            temp += "받는 사람 : " + string + " 메일 제목 :" + mailMap.get(string).getMailIndex() + " 메일 내용 :"
+//			                    + mailMap.get(string).getMailnote() + "\n";
+
+			
+		return temp;
+	}
+	
+
+	
 }
