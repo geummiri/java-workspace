@@ -14,8 +14,8 @@ public class C_Mapping {
 	public static void main(String[] args) {
 		C_Mapping c = new C_Mapping();
 //		c.method1();
-//		c.method2();
-		c.method3();
+		c.method2();
+//		c.method3();
 	}
 	//mapXXX() : 요소를 대체하는 요소로 구성된 새로운 스트림을 생성
 	public void method1() {

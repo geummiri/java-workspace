@@ -1,10 +1,7 @@
 package com.kh.project;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
-import java.util.Set;
-
 
 import com.kh.project.controller.FoodController;
 import com.kh.project.controller.UserController;
@@ -130,16 +127,6 @@ import com.kh.project.model.User;
 	//새로운 음식 종류 추가
 	public void addNewKind() {
 		
-		/*
-		 * 1. 과일 / 2. 채소 / 3. 견과 를 통해 번호로 종류를 받고 추가할 농산물의 이름과 수량도 받음.
-		 * 없는 번호를 선택하면 "잘못 입력하셨습니다. 다시 입력해주세요."가 출력되며 다시 번호를 받고,
-		 * 선택한 종류에 따라 객체가 다름.
-		 * 
-		 * 데이터를 저장한 객체와 수량을 fc의 addNewKind()로 넘기고
-		 * 전달받은 반환 값이 true면 "새 농산물이 추가되었습니다.",
-		 * false면 "새 농산물 추가에 실패하였습니다. 다시 입력해주세요." 출력되며 다시 번호를 받음.
-		 * 
-		 * */
 		try {
 			
 		System.out.println("1. 중식 / 2. 한식 / 3. 일식 ");
@@ -187,16 +174,6 @@ import com.kh.project.model.User;
 	//기존 음식 삭제
 	public void removeKind() {
 		
-		/*
-		 * 1. 과일 / 2. 채소 / 3. 견과 를 통해 번호로 종류를 받고 삭제할 농산물의 이름도 받음.
-		 * 없는 번호를 선택하면 "잘못 입력하셨습니다. 다시 입력해주세요."가 출력되며 다시 번호를 받고,
-		 * 선택한 종류에 따라 객체가 다름.
-		 * 
-		 * 데이터를 저장한 객체와 수량을 fc의 removeKind()로 넘기고
-		 * 전달받은 반환 값이 true면 "농산물 삭제에 성공하였습니다.",
-		 * false면 "농산물 삭제에 실패하였습니다. 다시 입력해주세요." 출력되며 다시 번호를 받음.
-		 * 
-		 * */
 		try {
 		System.out.println("1. 중식 / 2. 한식 / 3. 일식 ");
 		System.out.print("삭제할 종류 번호 : ");
@@ -236,16 +213,6 @@ import com.kh.project.model.User;
 	//기존 음식 메뉴 수량 변경
 	public void changeAmount() {
 				
-		/*
-		 * 1. 과일 / 2. 채소 / 3. 견과 를 통해 번호로 종류를 받고 수정할 농산물의 이름과 수량도 받음.
-		 * 없는 번호를 선택하면 "잘못 입력하셨습니다. 다시 입력해주세요."가 출력되며 다시 번호를 받고,
-		 * 선택한 종류에 따라 객체가 다름.
-		 * 
-		 * 데이터를 저장한 객체와 수량을 fc의 changeAmount()로 넘기고
-		 * 전달받은 반환 값이 true면 "농산물 수량이 수정되었습니다.",
-		 * false면 "농산물 수량 수정에 실패하였습니다. 다시 입력해주세요." 출력되며 다시 번호를 받음.
-		 * 
-		 * */
 		try {
 		System.out.println("1. 중식 / 2. 한식 / 3. 일식 ");
 		System.out.print("수정할 종류 번호 : ");
@@ -325,16 +292,6 @@ import com.kh.project.model.User;
 	
 	
 	//============================고객 관련 기능============================================
-	/*
-	 * 1. 과일 / 2. 채소 / 3. 견과 를 통해 번호로 종류를 받고 구매할 농산물의 이름도 받음.
-	 * 없는 번호를 선택하면 "잘못 입력하셨습니다. 다시 입력해주세요."가 출력되며 다시 번호를 받고,
-	 * 선택한 종류에 따라 객체가 다름.
-	 * 
-	 * 데이터를 저장한 객체를 fc의 buyFarm()으로 넘기고
-	 * 전달받은 반환 값이 true면 "구매에 성공하였습니다.",
-	 * false면 "마트에 없는 물건이거나 수량이 없습니다. 다시 입력해주세요." 출력되며 다시 번호를 받음.
-	 * 
-	 * */
 	
 	//기존 음식메뉴 결과값 추출
 		public void printFood() {
@@ -363,7 +320,7 @@ import com.kh.project.model.User;
 	Food f = new Food();
 	f.setName(name);
 	f.setKind(check);
-
+	
 	boolean result = fc.buyFood(f);
 
 	if(result) {
@@ -372,7 +329,6 @@ import com.kh.project.model.User;
 	else {
 		System.out.println("해당 상품은 없는 상품이거나 수량이 없습니다. 다시 입력해주세요.");
 	}
-
 	}
 	
 	//음식 주문 취소하기

@@ -11,6 +11,8 @@ public class A_Match {
  * - allMatch() : 모든 요소들이 매개 값으로 주어진 Predicate의 조건을 만족하는 조사
  * - anyMatch() : 최소한 한 개의 요소가 매개 값으로 주어진 Predicate의 조건을 만족하는 조사
  * - noneMatch() : 모든 요소들이 매개 값으로 주어진 Predicate의 조건을 만족하지 않는지 조사
+ *
+ * Predicate 주어진 입력 값을 받아서 논리적인 조건을 판별하는 함수 / true or false 반환
  */
 	public static void main(String[] args) {
 		A_Match a = new A_Match();
