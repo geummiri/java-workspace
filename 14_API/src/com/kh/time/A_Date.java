@@ -1,5 +1,6 @@
 package com.kh.time;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -127,8 +128,36 @@ public class A_Date {
 		System.out.println(cal2.getTime().toString());
 		
 	}
-	//자신이 태어난 날을 yyyy/MM/dd 형태로 입력받아 해당 날짜가 무슨 요일이었는지, 지금까지 며칠이 지났는지 계산
-	//입력된 형식이 잘못된 경우 다시 입력받기
+	//자신이 태어난 날을 yyyy/MM/dd 형태로 입력받아 해당 날짜가 무슨 요일이었는지, 지금까지 며칠이 지났는지 계산. 입력된 형식이 잘못된 경우 다시 입력받기.
+	public void practice() {
+		Scanner sc = new Scanner(System.in);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+		Date result = null;
+		
+		while(true) {
+			System.out.print("날짜를 yyyy/MM/dd 형태로 작성 : ");
+			String data = sc.nextLine();
+			try{
+				result = sdf.parse(data);
+				break;
+			} catch (ParseException e) {}
+			
+		}
+		
+		Calendar inputDate = Calendar.getInstance();
+		Calendar today = Calendar.getInstance();
+		
+		inputDate.setTime(result);
+		
+		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy/MM/dd은 E요일 입니다.");
+		System.out.println(sdf2.format(result));
+		
+		long day = (today.getTimeInMillis() - inputDate.getTimeInMillis())/(1000 * 24 * 60 * 60);
+		System.out.println("지금까지 " + day  + "일 지났습니다.");
+	
+		
+	}
+	//자신이 태어난 날을 yyyy/MM/dd 형태로 입력받아 해당 날짜가 무슨 요일이었는지, 지금까지 며칠이 지났는지 계산. 입력된 형식이 잘못된 경우 다시 입력받기.
 	public void method4() {
 	try {	
 		while(true) {
