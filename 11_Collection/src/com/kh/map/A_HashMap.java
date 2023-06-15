@@ -113,7 +113,7 @@ public class A_HashMap {
 		map.put("나쵸", new Snack("치즈", 486));
 		map.put("꼬깔콘", new Snack("매콤달콤", 175));
 		map.put("후렌치파이", new Snack("딸기", 900));
-
+	
 //		System.out.println(map);
 //		System.out.println(map.size());
 		
@@ -134,32 +134,24 @@ public class A_HashMap {
 		//2.후렌치파이의 맛 정보 출력 : 딸기
 //		System.out.println(map.get("후렌치파이").getFlavor());
 		//3.맛에 '딸기'가 들어간 과자들의 칼로리 평균
-//
-//		int total = 0;
-//		int count = 0;
 		
 //		Map<String, Snack> map = new HashMap<>();
 //		딸기 밸류에서의 칼로리를 빼야해 그러면 키값에서 딸기 빼오기
-		
+//		
 		int count = 0;
 		int total = 0;
-		Set<String> key = map.keySet();
 		
-		for (String keys : key) {
-			System.out.println(keys);
+		Set<String> keys = map.keySet(); //키값 먼저 지정해주기
+
+		for (String key : keys) {
+			if(map.get(key).getFlavor().contains("딸기")) {
+				total += map.get(key).getCalorie();
+				count++;
 			};
-		
-		
-//		Set<String> keys = map.keySet(); //키값 먼저 지정해주기
-//		for (String key : keys) {
-//			if(map.get(key).getFlavor().contains("딸기")) {
-//				total += map.get(key).getCalorie();
-//				count++;
-//			};
-//		}
-//		System.out.println(total/count);
+		}
+		System.out.println(total/count);
 			
 		}
-		
-		
 }
+		
+		

@@ -15,6 +15,7 @@ import com.kh.project.model.User;
 		UserController uc = new UserController();
 		ArrayList<User> list = new ArrayList<User>();
 		FoodController fc = new FoodController();
+		Food f = new Food();
 		
 		public static void main(String[] args) {
 			
@@ -28,7 +29,6 @@ import com.kh.project.model.User;
 			System.out.println("9. 종료");
 			System.out.print("메뉴 번호 선택 : ");
 			System.out.println();
-			
 			boolean check = true;
 			while(check) {
 			switch(Integer.parseInt(sc.nextLine())) {
@@ -336,21 +336,13 @@ import com.kh.project.model.User;
 	//음식 주문 취소하기
 	public void removeFood() {
 		
-		/*
-		 * 1. 과일 / 2. 채소 / 3. 견과 를 통해 번호로 종류를 받고 구매취소할 농산물 이름도 받음.
-		 * 없는 번호를 선택하면 "잘못 입력하셨습니다. 다시 입력해주세요."가 출력되며 다시 번호를 받고,
-		 * 선택한 종류에 따라 객체가 다름.
-		 * 
-		 * 데이터를 저장한 객체를 fc의 removeFarm()으로 넘기고
-		 * 전달받은 반환 값이 true면 "구매 취소에 성공하였습니다."
-		 * false면 "구매 목록에 존재하지 않습니다. 다시 입력해주세요." 출력되며 다시 번호를 받음.
-		 * */
-	
 		System.out.println("1. 중식 / 2. 한식 / 3. 일식 ");
 		System.out.print("취소 종류 번호 : ");
 		int select = Integer.parseInt(sc.nextLine());
-		System.out.print("구매 취소할 것 : ");
+		System.out.print("구매 취소할 메뉴 : ");
 		String name = sc.nextLine();
+		System.out.print("취소할 개수 : ");
+		int cancelNum =Integer.parseInt(sc.nextLine());
 		
 		String kind = null;
 		switch (select) {
@@ -373,7 +365,7 @@ import com.kh.project.model.User;
 		f.setKind(kind);
 		f.setName(name);
 
-		if (fc.removeFood(f) == true) {
+		if (fc.removeFood(f, cancelNum) == true) {
 			System.out.println("구매 취소에 성공하였습니다.");
 		} else
 			System.out.println("구매 목록에 존재하지 않습니다. 다시 입력해주세요.");
@@ -381,6 +373,7 @@ import com.kh.project.model.User;
 		
 	//내가 구매한 내역
 	public void printBuyFood() {
+		
 		System.out.println("현재 주문한 메뉴 내역은 : \n" + fc.buyFoodList());
 	}
 	
