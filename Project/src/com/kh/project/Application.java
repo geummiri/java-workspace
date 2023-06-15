@@ -304,8 +304,10 @@ import com.kh.project.model.User;
 	System.out.println("1. 중식 / 2. 한식 / 3. 일식 ");
 	System.out.print("구매 종류 번호 : ");
 	int select = Integer.parseInt(sc.nextLine());
-	System.out.print("구매할 것 : ");
+	System.out.print("구매할 메뉴 : ");
 	String name = sc.nextLine();
+	System.out.print("구매할 개수 : ");
+	int num = Integer.parseInt(sc.nextLine());
 	
 	String check = null;
 	
@@ -321,7 +323,7 @@ import com.kh.project.model.User;
 	f.setName(name);
 	f.setKind(check);
 	
-	boolean result = fc.buyFood(f);
+	boolean result = fc.buyFood(f, num);
 
 	if(result) {
 		System.out.println("주문이 완료되었습니다. 맛있게 드세요!");
@@ -379,7 +381,7 @@ import com.kh.project.model.User;
 		
 	//내가 구매한 내역
 	public void printBuyFood() {
-		System.out.println("현재 주문한 메뉴 내역은 : " + fc.buyFoodList());
+		System.out.println("현재 주문한 메뉴 내역은 : \n" + fc.buyFoodList());
 	}
 	
 }

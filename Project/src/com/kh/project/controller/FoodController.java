@@ -42,15 +42,22 @@ public class FoodController {
 		return false;
 	}
 	
-	public HashMap<Food, Integer> printFood() {
+	public String printFood() {
+
+		String temp = "";
+		Set<Food> map = hMap.keySet();
 		
-		return hMap ;
+		for (Food food : map) {
+			temp += "음식 종류 : " + food.getKind() + ", 음식 이름 : " + food.getName() + ", 음식 개수 : " + hMap.get(food) + "개 \n" ;
+		}
+		
+		return temp;
 	}
 	
 	// 고객 관련 기능 ------------------------------------------------------------
 	
 	//고객 음식 구매하기 
-	public boolean buyFood(Food f) {
+	public boolean buyFood(Food f, int num) {
 		
 		if(hMap.containsKey(f) && hMap.get(f) > 0) {
 		
@@ -78,17 +85,13 @@ public class FoodController {
 	}
 	
 	public String buyFoodList() {
-//		private ArrayList<Food> list = new ArrayList<>();
 		
 		String temp = "";
-//		Set<Food> key = hMap.keySet();
+//		Set<Food> key = hMap.keySet(); list 썼으니까 셋 안써도됨
 		for (Food food : list) {
-			temp += food.getKind() + " - "  + food.getName() + " (" + hMap.get(food) +") ";
-			
+			temp += food.getKind() + " / "  + food.getName() + " / " + hMap.get(food) + "개 \n";
 		}
 		return temp;
 	}
-	
 
-	
 }
