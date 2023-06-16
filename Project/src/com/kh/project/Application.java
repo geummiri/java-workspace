@@ -24,6 +24,7 @@ import com.kh.project.model.User;
 		}
 		//메인메뉴
 		public void mainMenu() {
+			System.out.println("===========kh음식주문=============");
 			System.out.println("1. 직원 메뉴");
 			System.out.println("2. 손님 메뉴");
 			System.out.println("9. 종료");
