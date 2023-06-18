@@ -54,12 +54,12 @@ public class Application {
 		System.out.println("TV 상태 : " + tv.power); //true
 
 		System.out.println("TV 상태 : " + tv.channel); //20
-		tv.channelup();
-		tv.channelup();
-		tv.channelup();
+		tv.channelUp();
+		tv.channelUp();
+		tv.channelUp();
 		tv.channelDown();
 		tv.channelDown();
-		tv.channelup();
+		tv.channelUp();
 		System.out.println("TV 상태 : " + tv.channel);
 	}
 }

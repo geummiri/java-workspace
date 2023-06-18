@@ -2,7 +2,7 @@ package com.kh.practice4.model;
 
 import java.util.Objects;
 
-import com.kh.list.model.Person;
+import com.kh.list.model.*;
 
 public class Member {
 

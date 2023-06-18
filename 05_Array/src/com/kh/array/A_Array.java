@@ -39,8 +39,8 @@ public class A_Array {
 //		a.method5();
 //		a.method6();
 //		a.method7();
-		a.method8();
-//		a.method9();
+//		a.method8();
+		a.method9();
 
 	}
 	// 배열의 선언과 초기화
@@ -83,7 +83,7 @@ public class A_Array {
 	public void method2() {
 		int[] score = new int[] { 100, 90, 80, 70, 60 };
 
-		int score2;
+//		int score2;
 //			score2 =  {100,90,80,70,60}; //이건 안됨!
 
 		// 문자열.length(), 배열.length <- 주의
@@ -246,7 +246,7 @@ public class A_Array {
 
 		copy = number.clone();
 
-		copy[3] = 9;
+		copy[3] = 9; //복사한 배열의 3번째 자리를 9로 바꾼다.
 
 		System.out.println(Arrays.toString(number));
 		System.out.println(Arrays.toString(copy));

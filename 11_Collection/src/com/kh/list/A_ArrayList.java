@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import com.kh.list.model.Person;
+import com.kh.list.model.*;
 
 	/*
 	 * 컬랙션 : 자바에서 제공하는 자료구조를 담당하는 프레임워크
@@ -66,18 +66,18 @@ import com.kh.list.model.Person;
 //			<> 다이아몬드 연산자 제네릭스 <Person> 사용하면 에러뜸 / 맨앞 배열이름 바로뒤에 붙여주기 ArrayList<Person>
 	
 			//2.add(int index, E e) : 인덱스를 지정하여 해당 인덱스에 추가
-			list.add(1, new Person("유재석", "압구정", 50)); //1번째 인덱스에 값 출력
-			list.add(3, new Person("강호동", "압구정", 52));
-			
+//			list.add(1, new Person("유재석", "압구정", 50)); //1번째 인덱스에 값 출력
+//			list.add(3, new Person("강호동", "압구정", 52));
+//			
 			//3.set(int index, E e) : 해당 인덱스의 값을 변경
-			list.set(3, new Person("오은영", "강남", 57)); //3번째에 있는 강호동 사라지고 오은영 출력됨 / get set이랑 비슷
+//			list.set(3, new Person("오은영", "강남", 57)); //3번째에 있는 강호동 사라지고 오은영 출력됨 / get set이랑 비슷
 //			System.out.println(list);
 
 			//4.size() : 리스트 안에 몇 개의 데이터가 있는지
-			System.out.println("사람 수 : " + list.size()); // 리스트의 사이즈 메서드사용하면 정수 값 출력
+//			System.out.println("사람 수 : " + list.size()); // 리스트의 사이즈 메서드사용하면 정수 값 출력
 			
 			//5.remove(int index) : 해당 인덱스의 객체 삭제
-			System.out.println(list.remove(0) + " 삭제"); //0번째 배열 remove하면 false타입으로 반환하고 삭제 --> (Person [name=전현무, addr=삼섬동, age=45] 삭제)
+//			System.out.println(list.remove(0) + " 삭제"); //0번째 배열 remove하면 false타입으로 반환하고 삭제 --> (Person [name=전현무, addr=삼섬동, age=45] 삭제)
 //			System.out.println(list); //remove 사용하고 다시 출력하면 0번째 배열 삭제
 			
 			//6.get(int index) : 해당 인덱스로 객체 가져오기
@@ -89,10 +89,10 @@ import com.kh.list.model.Person;
 			
 			//8.addAll(Collection c) : 컬랙션을 통채로 뒤에 추가하는 메서드
 			list.addAll(sub);
-			System.out.println(list); //기존 list 배열 + sub에 출력된거 마지막에 출력됨
+//			System.out.println(list); //기존 list 배열 + sub에 출력된거 마지막에 출력됨
 			
 			//9.isEmpty() : 컬랙션이 비어있는지 묻는 메서드
-			System.out.println("리스트가 비어있는지 : " + list.isEmpty()); //안비어있어서 false로 반환됨
+//			System.out.println("리스트가 비어있는지 : " + list.isEmpty()); //안비어있어서 false로 반환됨
 			
 			
 			//리스트에 저장된 사람들의 평균 연령을 출력

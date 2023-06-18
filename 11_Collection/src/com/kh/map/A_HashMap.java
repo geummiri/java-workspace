@@ -66,7 +66,8 @@ public class A_HashMap {
 		
 		/*
 		 *4.entrySet() 메서드
-		 *	- entrySet() 메서드는 Map 컬렉션에 있는 Entry 객체(key, value 쌍으로 이루어진)를 Set 컬렉션에 담아서 반환
+		 *	- entrySet() 메서드는 Map 컬렉션에 있는 Entry 객체
+		 *(key, value 쌍으로 이루어진)를 Set 컬렉션에 담아서 반환
 		 */
 			
 		Set<Entry<String, Integer>> entrySet = map.entrySet(); //import 할 때 import java.util.Map;로
